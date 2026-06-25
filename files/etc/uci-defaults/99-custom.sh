@@ -14,6 +14,9 @@ uci add dhcp domain
 uci set "dhcp.@domain[-1].name=time.android.com"
 uci set "dhcp.@domain[-1].ip=203.107.6.88"
 
+uci add dhcp domain
+uci set dhcp.@domain[-1].name=connectivitycheck.gstatic.com
+uci set dhcp.@domain[-1].ip=203.107.6.88
 # 检查配置文件pppoe-settings是否存在 该文件由build.sh动态生成
 SETTINGS_FILE="/etc/config/pppoe-settings"
 if [ ! -f "$SETTINGS_FILE" ]; then
